@@ -1,0 +1,22 @@
+.error {
+  padding: 50px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.errorTitle {
+  color: rgba(194, 19, 19, 0.729);
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.errorText {
+  color: rgba(170, 37, 37, 0.723);
+  font-size: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .errorTitle {
+    font-size: 50px;
+  }
+}

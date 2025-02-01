@@ -12,7 +12,9 @@ function ErrorMessage() {
         Please try again after some time. If the issue persists, you may need to
         check your API account or request limits.
       </p>
-      <p>Check your internet connection and try again.</p>
+      <p className={css.errorText}>
+        Check your internet connection and try again.
+      </p>
     </div>
   );
 }

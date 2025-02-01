@@ -38,6 +38,7 @@ function App() {
 
         if (data.total_pages === 0) {
           showToast('info', 'noSearchImages');
+          return;
         }
 
         setTotalPages(data.total_pages);
@@ -47,9 +48,7 @@ function App() {
 
         if (page > 1 && page === totalPage) {
           showToast('info', 'NoImagesBtn');
-        }
-        if (page === 1 && totalPage !== 0) {
-          showToast('success', 'message');
+          return;
         }
       } catch (error) {
         setError(true);
@@ -110,10 +109,10 @@ function App() {
   return (
     <div>
       <Toaster position="top-center" reverseOrder={false} />
-      {dataImages.length > 0 && <ScrollUpButton />}
+      {dataImages.length > 0 && !error && <ScrollUpButton />}
 
       <SearchBar onSubmit={hendleSearch} />
-      {dataImages.length > 0 && (
+      {dataImages.length > 0 && !error && (
         <ImageGallery
           dataImages={dataImages}
           imageRefs={imageRefs}
@@ -123,7 +122,7 @@ function App() {
 
       {loading && <Loader loading={loading} />}
       {error && <ErrorMessage />}
-      {page < totalPage && dataImages.length > 0 && !loading && (
+      {page < totalPage && dataImages.length > 0 && !loading && !error && (
         <LoadMoreBtn onClick={heandleLoadMore} />
       )}
 
