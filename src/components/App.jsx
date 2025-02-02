@@ -71,13 +71,12 @@ function App() {
     fetchImages();
   }, [query, page]);
 
-  useEffect(() => {
-    if (page > 1) {
-      setTimeout(() => {
-        scrollNewImg();
-      }, 800);
+  const handleImageLoad = index => {
+    if (page !== 1 && index === dataImages.length - 1) {
+      scrollNewImg();
     }
-  }, [page]);
+    return;
+  };
 
   const scrollNewImg = () => {
     const firstImageRef = imageRefs.current[0];
@@ -121,6 +120,7 @@ function App() {
           dataImages={dataImages}
           imageRefs={imageRefs}
           onImageClick={openModal}
+          onLoad={handleImageLoad}
         />
       )}
 

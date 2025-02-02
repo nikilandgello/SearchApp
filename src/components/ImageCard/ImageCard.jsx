@@ -1,12 +1,13 @@
 import css from './ImageCard.module.css';
 
-const ImageCard = ({ dataAttribute }) => {
+const ImageCard = ({ dataAttribute, onLoad }) => {
   return (
     <div>
       <img
         src={dataAttribute.urls.small}
         alt={dataAttribute}
         className={css.card}
+        onLoad={onLoad}
       />
       <div className={css.cardDescription}>
         <div className={css.cardLikes}>
