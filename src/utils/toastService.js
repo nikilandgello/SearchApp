@@ -10,13 +10,18 @@ const showToast = (type, key) => {
       icon: '✎',
       style: {
         borderxRadius: '5px',
-        background: 'rgb(76, 153, 255, 0.7)',
+        background: 'rgba(100, 108, 255, 0.584)',
+        color: 'rgba(255, 255, 255, 0.6)',
       },
       duration: 2000,
     });
   } else if (messages[type] && messages[type][key]) {
     toast[type](messages[type][key], {
       duration: 2000,
+      style: {
+        background: 'rgba(100, 108, 255, 0.584)',
+        color: 'rgba(255, 255, 255, 0.6)',
+      },
     });
   } else {
     toast.error('Something went wrong!');
