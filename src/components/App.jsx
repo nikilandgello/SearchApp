@@ -75,7 +75,7 @@ function App() {
     if (page > 1) {
       setTimeout(() => {
         scrollNewImg();
-      }, 500);
+      }, 800);
     }
   }, [page]);
 
