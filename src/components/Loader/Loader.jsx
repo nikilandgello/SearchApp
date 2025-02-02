@@ -10,8 +10,7 @@ const Loader = ({ loading }) => {
         speedMultiplier={1.5}
         cssOverride={{
           display: 'block',
-          margin: '0 auto',
-          marginBottom: '20px',
+          margin: '20px auto',
         }}
       />
     </>

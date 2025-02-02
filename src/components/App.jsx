@@ -46,8 +46,12 @@ function App() {
           page === 1 ? data.results : [...prev, ...data.results]
         );
 
-        if (page > 1 && page === totalPage) {
+        if (page > 1 && page === data.total_pages) {
           showToast('info', 'NoImagesBtn');
+          return;
+        }
+        if (page === 1 && data.total_pages !== 0) {
+          showToast('info', 'noSearchImages');
           return;
         }
       } catch (error) {
@@ -65,13 +69,13 @@ function App() {
     };
 
     fetchImages();
-  }, [query, page, totalPage]);
+  }, [query, page]);
 
   useEffect(() => {
     if (page > 1) {
       setTimeout(() => {
         scrollNewImg();
-      }, 100);
+      }, 500);
     }
   }, [page]);
 
