@@ -51,7 +51,7 @@ function App() {
           return;
         }
         if (page === 1 && data.total_pages !== 0) {
-          showToast('info', 'noSearchImages');
+          showToast('success', 'message');
           return;
         }
       } catch (error) {

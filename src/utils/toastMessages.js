@@ -1,4 +1,7 @@
 const TOAST_MESSEGES = {
+  success: {
+    message: 'Images loaded successfully!',
+  },
   info: {
     message: 'The field must be filled',
     noSearchImages:
