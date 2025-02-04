@@ -1,9 +1,12 @@
 import axios from 'axios';
+const META_ENV = import.meta.env;
 
-export let perPage = 12;
-const ACCESS_KEY = 'gB4MNk7lrVEx3yyxegbkJvsqZB-SdyDoSQ3p2b5PxFU';
+const ACCESS_KEY = META_ENV.VITE_ACCESS_KEY;
+const BASE_URL = META_ENV.VITE_BASE_URL;
 
-axios.defaults.baseURL = `https://api.unsplash.com/`;
+axios.defaults.baseURL = BASE_URL;
+
+let perPage = 12;
 
 export const getImages = async (page, query) => {
   const params = new URLSearchParams({
